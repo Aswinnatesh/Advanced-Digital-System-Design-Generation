@@ -1,0 +1,39 @@
+README FILE - Commands
+
+Part 2 
+
+	vlog Part2_Tb1.sv
+	vsim tb_part2_mac -c -do "run -all"
+
+
+Part 2 - To Execute Part 2 with Exhaustive Testing Using C
+
+	gcc Randomtestgen.c
+	./a.out
+	vlog Part2_Tb2.sv
+	vsim tb_part2_mac -c -do "run -all"
+	diff -w expectedOutput outValues
+
+Part 3 - A
+
+	vlog /usr/local/synopsys/syn/dw/sim_ver/DW02_mult*.v
+	vlog Part3_01.sv
+	vsim tb_part3_mac -c -do "run -all"
+
+	
+Part 3 - B
+
+	vlog /usr/local/synopsys/syn/dw/sim_ver/DW02_mult*.v
+	vlog Part3_02.sv
+	vsim tb_part3_mac -c -do "run -all"
+
+Part 3 - C
+
+	vlog /usr/local/synopsys/syn/dw/sim_ver/DW02_mult*.v
+	vlog Part3_03.sv
+	vsim tb_part3_mac -c -do "run -all"
+
+
+To Simulate:
+	
+	dc_shell -f runsynth.tcl | tee <OutputFile.txt>
