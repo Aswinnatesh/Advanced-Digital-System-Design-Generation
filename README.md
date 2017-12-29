@@ -13,9 +13,7 @@ Copyright (c) 2017 Aswinnatesh | All Rights Reserved
 
 Find few operation flow and datapath illustrations below:-
 
-<p align="center">
 ![Alt Text](https://github.com/Aswinnatesh/Advanced-Digital-System-Design-Generation/blob/master/Datapath%20Pictures/Project%201%20Data%20Path.png)
-</p>
 
 ![Alt Text](https://github.com/Aswinnatesh/Advanced-Digital-System-Design-Generation/blob/master/Datapath%20Pictures/Project%202%20-%20Data%20Path.png)
 
