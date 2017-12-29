@@ -11,8 +11,6 @@ Project 3: Accelerated Hardware Generation Hardware >> [Project Handout](https:/
 
 Copyright (c) 2017 Aswinnatesh | All Rights Reserved
 
-Find few operation flow and datapath illustrations below:-
-
 ![Alt Text](https://github.com/Aswinnatesh/Advanced-Digital-System-Design-Generation/blob/master/Datapath%20Pictures/Project%201%20Data%20Path.png)
 
 ![Alt Text](https://github.com/Aswinnatesh/Advanced-Digital-System-Design-Generation/blob/master/Datapath%20Pictures/Project%203%20Part%203.png)
