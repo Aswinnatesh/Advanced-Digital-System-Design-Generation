@@ -1,0 +1,51 @@
+
+//-------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------------------------------------//
+// Project Title    : Matrix Vector Multiplication  || Part: 01                                  ESE 507 [Fall 2017] //
+//                                                                                                                   //
+// Project Member 1 : Aswin Natesh Venkatesh    [SBU ID: 111582677]                                                  //
+// Project Member 2 : Gosakan Srinivasan        [SBU ID: 111579886]                                                  // 
+//                                                                                                                   //
+// Submission Date  : November 6, 2017                                                                               //
+//-------------------------------------------------------------------------------------------------------------------//
+
+README FILE - Commands
+
+Part 1 - To Execute Part 1 with Random Test Using C
+
+	gcc randtestgen.c
+	./a.out
+	vlog MVM_Part1.sv
+	vsim check_timing -c -do "run -all"
+	diff -w C_Output Sv_Output
+
+Part 2 - To Execute Part 2 with Random Test Using C
+
+	gcc randgentest.c
+	./a.out
+	vlog MVM_Part2.sv
+	vsim check_timing -c -do "run -all"
+	diff -w C_Output Sv_Output
+
+Part 3 - To Execute Part 3 with Random Test Using C
+
+	gcc randgentest.c
+	./a.out
+	vlog MVM_Part3.sv
+	vsim check_timing -c -do "run -all"
+	diff -w C_Output Sv_Output
+
+Part 4 - To Execute Part 4 with Random Test Using C
+
+	gcc randgentest.c
+	./a.out
+	vlog MVM_Part4.sv
+	vsim check_timing -c -do "run -all"
+	diff -w C_Output Sv_Output
+
+
+
+
+To Simulate:
+	
+	dc_shell -f runsynth.tcl | tee <OutputFile.txt>

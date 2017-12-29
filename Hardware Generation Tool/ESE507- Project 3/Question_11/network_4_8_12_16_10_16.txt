@@ -1,0 +1,1213 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.08;
+1.08
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "network_4_8_12_16_10_16";
+network_4_8_12_16_10_16
+set SRC_FILE "network_4_8_12_16_10_16.sv";
+network_4_8_12_16_10_16.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synthx
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./network_4_8_12_16_10_16.sv
+Compiling source file ./network_4_8_12_16_10_16.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'network_4_8_12_16_10_16'.
+Information: Building the design 'layer1_8_4_2_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'control_module1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:112: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:142: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:165: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:174: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine control_module1 line 71 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine control_module1 line 120 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_m_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_y_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_b_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       row_reg       | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     column_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     hold_s2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_complete_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     hold_s3_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    hold_disp_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|      flag_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_module1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'control_module2'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:404: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:434: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:457: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:466: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine control_module2 line 363 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine control_module2 line 412 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_m_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_y_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_b_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       row_reg       | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     column_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     hold_s2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_complete_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     hold_s3_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    hold_disp_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|      flag_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_module2'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'control_module3'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:826: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:856: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:879: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:888: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine control_module3 line 785 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine control_module3 line 834 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_m_reg      | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_y_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_b_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       row_reg       | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|     column_reg      | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|     hold_s2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  mac_complete_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     hold_s3_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    hold_disp_reg    | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|      flag_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_module3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_module1' with
+	the parameters "16,4,3". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE4_LOGSIZE3 line 1311 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+=============================================================================
+|          block name/line           | Inputs | Outputs | # sel inputs | MB |
+=============================================================================
+| memory_WIDTH16_SIZE4_LOGSIZE3/1313 |   4    |   16    |      2       | N  |
+=============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_module1' with
+	the parameters "16,8,4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE8_LOGSIZE4 line 1311 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+=============================================================================
+|          block name/line           | Inputs | Outputs | # sel inputs | MB |
+=============================================================================
+| memory_WIDTH16_SIZE8_LOGSIZE4/1313 |   8    |   16    |      3       | N  |
+=============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_B1_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 298 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           299            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_B1_rom line 298 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_W1_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 246 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           247            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_W1_rom line 246 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mac'. (HDL-193)
+
+Inferred memory devices in process
+	in routine mac line 1278 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     data_y_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine mac line 1287 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     product_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_B2_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 312 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           313            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_B2_rom line 312 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_W2_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 272 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           273            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_W2_rom line 272 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_module2' with
+	the parameters "16,12,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE12_LOGSIZE5 line 1311 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B1_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 696 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           697            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B1_rom line 696 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W1_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 560 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           561            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W1_rom line 560 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B2_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 709 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           710            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B2_rom line 709 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W2_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 594 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           595            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W2_rom line 594 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B3_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 722 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           723            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B3_rom line 722 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W3_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 628 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           629            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W3_rom line 628 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B4_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 735 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           736            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B4_rom line 735 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W4_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 662 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           663            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W4_rom line 662 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath_module3' with
+	the parameters "16,16,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE16_LOGSIZE5 line 1311 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================================
+|          block name/line            | Inputs | Outputs | # sel inputs | MB |
+==============================================================================
+| memory_WIDTH16_SIZE16_LOGSIZE5/1313 |   16   |   16    |      4       | N  |
+==============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B1_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1214 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1215           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B1_rom line 1214 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W1_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 982 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           983            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W1_rom line 982 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B2_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1228 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1229           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B2_rom line 1228 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W2_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1040 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1041           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W2_rom line 1040 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B3_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1242 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1243           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B3_rom line 1242 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W3_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1098 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1099           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W3_rom line 1098 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B4_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1256 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1257           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B4_rom line 1256 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W4_rom'. (HDL-193)
+
+Statistics for case statements in always block at line 1156 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1157           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W4_rom line 1156 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset s_valid m_ready data_in[15] data_in[14] data_in[13] data_in[12] data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{s_valid m_ready data_in[15] data_in[14] data_in[13] data_in[12] data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+# set delay for inputs to be 0.2ns
+set_input_delay 0.2 -max -clock clk $INPUTS
+1
+set_output_delay 0.2 -max -clock clk [all_outputs]
+1
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+
+Information: There are 39 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mac_0'
+  Processing 'layer3_16_12_4_16_W4_rom'
+  Processing 'layer3_16_12_4_16_B4_rom'
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+  Processing 'memory_WIDTH16_SIZE16_LOGSIZE5_0'
+  Processing 'layer3_16_12_4_16_W3_rom'
+  Processing 'layer3_16_12_4_16_B3_rom'
+  Processing 'layer3_16_12_4_16_W2_rom'
+  Processing 'layer3_16_12_4_16_B2_rom'
+  Processing 'layer3_16_12_4_16_W1_rom'
+  Processing 'layer3_16_12_4_16_B1_rom'
+Information: The register 'z_reg[1]' is a constant and will be removed. (OPT-1206)
+  Processing 'memory_WIDTH16_SIZE12_LOGSIZE5_0'
+  Processing 'datapath_module3'
+  Processing 'control_module3'
+Information: The register 'state_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer3_16_12_4_16'
+  Processing 'layer2_12_8_4_16_W4_rom'
+  Processing 'layer2_12_8_4_16_B4_rom'
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W3_rom'
+  Processing 'layer2_12_8_4_16_B3_rom'
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W2_rom'
+  Processing 'layer2_12_8_4_16_B2_rom'
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W1_rom'
+  Processing 'layer2_12_8_4_16_B1_rom'
+Information: The register 'z_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'memory_WIDTH16_SIZE8_LOGSIZE4_0'
+  Processing 'datapath_module2'
+  Processing 'control_module2'
+Information: Added key list 'DesignWare' to design 'control_module2'. (DDB-72)
+Information: The register 'state_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16'
+  Processing 'layer1_8_4_2_16_W2_rom'
+  Processing 'layer1_8_4_2_16_B2_rom'
+Information: The register 'z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[7]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer1_8_4_2_16_W1_rom'
+  Processing 'layer1_8_4_2_16_B1_rom'
+  Processing 'memory_WIDTH16_SIZE4_LOGSIZE3'
+  Processing 'datapath_module1'
+  Processing 'control_module1'
+Information: Added key list 'DesignWare' to design 'control_module1'. (DDB-72)
+Information: The register 'state_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer1_8_4_2_16'
+  Processing 'network_4_8_12_16_10_16'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'mac_1_DW01_add_0'
+  Processing 'mac_2_DW01_add_0'
+  Processing 'mac_3_DW01_add_0'
+  Processing 'mac_4_DW01_add_0'
+  Processing 'control_module3_DW01_inc_0'
+  Processing 'control_module3_DW01_inc_1'
+  Processing 'control_module3_DW01_inc_2'
+  Processing 'control_module3_DW01_inc_3'
+  Processing 'control_module3_DW01_inc_4'
+  Mapping 'control_module3_DW_cmp_1'
+  Mapping 'control_module3_DW_cmp_2'
+  Mapping 'control_module3_DW_cmp_3'
+  Processing 'mac_5_DW01_add_0'
+  Processing 'mac_6_DW01_add_0'
+  Processing 'mac_7_DW01_add_0'
+  Processing 'mac_8_DW01_add_0'
+  Processing 'control_module2_DW01_inc_0'
+  Processing 'control_module2_DW01_inc_1'
+  Processing 'control_module2_DW01_inc_2'
+  Processing 'control_module2_DW01_add_0'
+  Processing 'control_module2_DW01_inc_3'
+  Mapping 'control_module2_DW_cmp_0'
+  Processing 'mac_9_DW01_add_0'
+  Processing 'mac_0_DW01_add_0'
+  Processing 'control_module1_DW01_inc_0'
+  Processing 'control_module1_DW01_inc_1'
+  Processing 'control_module1_DW01_inc_2'
+  Processing 'control_module1_DW01_add_0'
+  Processing 'control_module1_DW01_inc_3'
+  Mapping 'control_module1_DW_cmp_0'
+  Processing 'control_module3_DW01_add_0'
+  Mapping 'control_module3_DW_mult_uns_0'
+  Mapping 'mac_4_DW_mult_tc_0'
+  Mapping 'mac_3_DW_mult_tc_0'
+  Mapping 'mac_2_DW_mult_tc_0'
+  Mapping 'mac_1_DW_mult_tc_0'
+  Mapping 'mac_8_DW_mult_tc_0'
+  Mapping 'mac_7_DW_mult_tc_0'
+  Mapping 'mac_6_DW_mult_tc_0'
+  Mapping 'mac_5_DW_mult_tc_0'
+  Mapping 'mac_9_DW_mult_tc_0'
+  Mapping 'mac_0_DW_mult_tc_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'control_module3'. (DDB-72)
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11   41738.3      1.15     123.2    4585.1                          
+    0:00:11   41738.3      1.15     123.2    4585.1                          
+    0:00:16   40142.1      0.18      15.2      48.4                          
+    0:00:16   40148.2      0.21      15.6      48.4                          
+    0:00:16   40148.2      0.21      15.6      48.4                          
+    0:00:16   40137.5      0.21      15.6      48.1                          
+    0:00:16   40137.5      0.21      15.6      48.1                          
+    0:00:20   33172.6      0.21       8.3       0.0                          
+    0:00:21   33168.9      0.17       6.9       0.0                          
+    0:00:21   33178.4      0.15       6.6       0.0                          
+    0:00:22   33190.4      0.15       6.3       0.0                          
+    0:00:22   33205.3      0.14       6.0       0.0                          
+    0:00:22   33217.5      0.19       6.4       0.0                          
+    0:00:22   33225.3      0.14       5.6       0.0                          
+    0:00:23   33237.2      0.12       5.4       0.0                          
+    0:00:23   33242.3      0.12       5.1       0.0                          
+    0:00:23   33256.6      0.12       4.8       0.0                          
+    0:00:23   33273.9      0.11       4.6       0.0                          
+    0:00:23   33283.8      0.10       4.4       0.0                          
+    0:00:23   33295.0      0.10       4.3       0.0                          
+    0:00:24   33305.6      0.10       4.1       0.0                          
+    0:00:24   33318.9      0.09       3.9       0.0                          
+    0:00:24   33326.3      0.09       3.8       0.0                          
+    0:00:24   33333.3      0.09       3.6       0.0                          
+    0:00:24   33333.3      0.09       3.6       0.0                          
+    0:00:24   33333.3      0.09       3.6       0.0                          
+    0:00:24   33333.3      0.09       3.6       0.0                          
+    0:00:24   33333.3      0.09       3.6       0.0                          
+    0:00:24   33333.3      0.09       3.6       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:24   33333.3      0.09       3.6       0.0                          
+    0:00:24   33338.3      0.08       3.5       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:24   33343.1      0.08       3.4       0.0 Net3/d/ma32/data_y_reg[15]/D
+    0:00:24   33346.3      0.08       3.3       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:24   33355.9      0.07       3.1       0.0 Net3/d/ma33/data_y_reg[15]/D
+    0:00:25   33359.6      0.07       3.0       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:25   33364.4      0.07       3.0       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:25   33376.1      0.07       2.9       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:25   33385.1      0.07       2.9       0.0 Net3/d/ma34/product_reg[14]/D
+    0:00:25   33388.9      0.07       2.8       0.0 Net2/d/ma21/product_reg[15]/D
+    0:00:25   33392.0      0.06       2.7       0.0 Net2/d/ma24/product_reg[15]/D
+    0:00:25   33402.9      0.06       2.7       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:25   33405.3      0.06       2.6       0.0 Net3/d/ma31/data_y_reg[15]/D
+    0:00:25   33408.8      0.06       2.6       0.0 Net2/d/ma23/data_y_reg[15]/D
+    0:00:25   33417.6      0.06       2.5       0.0 Net2/d/ma21/data_y_reg[15]/D
+    0:00:25   33420.5      0.06       2.5       0.0 Net3/d/ma33/product_reg[15]/D
+    0:00:25   33425.3      0.06       2.1       0.0 Net3/d/ma33/data_y_reg[15]/D
+    0:00:25   33427.7      0.06       2.0       0.0 Net2/d/ma21/product_reg[15]/D
+    0:00:25   33432.7      0.06       2.0       0.0 Net2/d/ma22/data_y_reg[15]/D
+    0:00:25   33434.1      0.06       2.0       0.0 Net3/d/ma33/product_reg[15]/D
+    0:00:26   33439.4      0.05       1.9       0.0 Net3/d/ma34/product_reg[14]/D
+    0:00:26   33450.0      0.05       1.9       0.0 Net1/d/ma11/product_reg[15]/D
+    0:00:26   33453.5      0.05       1.8       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:26   33461.5      0.05       1.7       0.0 Net2/d/ma23/product_reg[15]/D
+    0:00:26   33465.2      0.05       1.7       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:26   33472.6      0.05       1.7       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:26   33484.9      0.05       1.6       0.0 Net2/d/ma22/product_reg[15]/D
+    0:00:26   33489.4      0.05       1.6       0.0 Net3/d/ma31/data_y_reg[15]/D
+    0:00:26   33494.2      0.05       1.6       0.0 Net1/d/ma12/data_y_reg[15]/D
+    0:00:26   33501.9      0.05       1.5       0.0 Net3/d/ma34/data_y_reg[15]/D
+    0:00:26   33504.3      0.05       1.5       0.0 Net2/d/ma24/product_reg[15]/D
+    0:00:26   33508.0      0.04       1.4       0.0 Net2/d/ma24/product_reg[14]/D
+    0:00:26   33516.3      0.04       1.4       0.0 Net2/d/ma21/product_reg[15]/D
+    0:00:26   33524.0      0.04       1.3       0.0 Net1/d/ma11/product_reg[15]/D
+    0:00:27   33530.4      0.04       1.3       0.0 Net1/d/ma11/data_y_reg[15]/D
+    0:00:27   33530.6      0.04       1.2       0.0 Net2/d/ma22/product_reg[15]/D
+    0:00:27   33538.1      0.04       1.2       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:27   33539.9      0.04       1.2       0.0 Net2/d/ma21/data_y_reg[15]/D
+    0:00:27   33543.7      0.04       1.2       0.0 Net2/d/ma23/product_reg[15]/D
+    0:00:27   33558.0      0.04       1.1       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:27   33562.8      0.04       1.1       0.0 Net3/d/ma33/data_y_reg[15]/D
+    0:00:27   33567.3      0.03       1.0       0.0 Net2/d/ma22/product_reg[14]/D
+    0:00:27   33573.5      0.03       1.0       0.0 Net3/d/ma33/data_y_reg[15]/D
+    0:00:27   33577.2      0.03       0.9       0.0 Net2/d/ma23/product_reg[15]/D
+    0:00:27   33579.3      0.03       0.9       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:27   33587.0      0.03       0.9       0.0 Net2/d/ma23/data_y_reg[15]/D
+    0:00:27   33587.6      0.03       0.8       0.0 Net2/d/ma22/product_reg[14]/D
+    0:00:27   33595.5      0.03       0.8       0.0 Net3/d/ma34/product_reg[14]/D
+    0:00:27   33598.5      0.03       0.8       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:27   33599.5      0.03       0.8       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:27   33601.4      0.02       0.7       0.0 Net3/d/ma32/data_y_reg[15]/D
+    0:00:27   33604.0      0.02       0.7       0.0 Net3/d/ma33/product_reg[15]/D
+    0:00:28   33607.0      0.02       0.7       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:28   33609.6      0.02       0.7       0.0 Net3/d/ma34/data_y_reg[15]/D
+    0:00:28   33615.0      0.02       0.6       0.0 Net2/d/ma21/product_reg[15]/D
+    0:00:28   33619.5      0.02       0.6       0.0 Net3/d/ma34/product_reg[15]/D
+    0:00:28   33623.5      0.02       0.6       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:28   33632.0      0.02       0.6       0.0 Net3/d/ma34/product_reg[14]/D
+    0:00:28   33631.7      0.02       0.6       0.0 Net3/d/ma34/product_reg[15]/D
+    0:00:28   33633.8      0.02       0.6       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:28   33640.5      0.02       0.5       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:28   33644.2      0.02       0.5       0.0 Net3/d/ma33/product_reg[15]/D
+    0:00:28   33645.8      0.02       0.5       0.0 Net1/d/ma11/product_reg[15]/D
+    0:00:28   33650.3      0.02       0.5       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:28   33652.7      0.01       0.3       0.0 Net3/d/ma34/data_y_reg[15]/D
+    0:00:28   33658.0      0.01       0.3       0.0 Net2/d/ma22/data_y_reg[15]/D
+    0:00:29   33658.0      0.01       0.3       0.0                          
+    0:00:29   33658.0      0.01       0.3       0.0 Net3/d/ma34/data_y_reg[15]/D
+    0:00:29   33658.0      0.01       0.3       0.0                          
+    0:00:30   33644.2      0.01       0.3       0.0                          
+    0:00:30   33640.2      0.01       0.3       0.0                          
+    0:00:30   33640.8      0.01       0.3       0.0                          
+    0:00:30   33642.1      0.01       0.3       0.0 Net2/d/ma23/product_reg[15]/D
+    0:00:30   33644.5      0.01       0.3       0.0 Net3/d/ma34/product_reg[15]/D
+    0:00:30   33649.0      0.01       0.2       0.0 Net2/d/ma22/product_reg[15]/D
+    0:00:30   33653.3      0.01       0.2       0.0 Net1/d/ma12/product_reg[15]/D
+    0:00:30   33657.8      0.01       0.2       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:31   33666.0      0.01       0.2       0.0 Net3/d/ma31/product_reg[15]/D
+    0:00:31   33666.8      0.01       0.2       0.0 Net3/d/ma32/product_reg[15]/D
+    0:00:31   33668.7      0.01       0.2       0.0 Net3/d/ma31/data_y_reg[15]/D
+    0:00:31   33669.7      0.01       0.2       0.0 Net1/d/ma11/data_y_reg[15]/D
+    0:00:31   33670.5      0.01       0.2       0.0 Net3/d/ma31/product_reg[14]/D
+    0:00:31   33672.1      0.01       0.1       0.0 Net3/d/ma34/data_y_reg[15]/D
+    0:00:31   33673.7      0.01       0.1       0.0 Net3/d/ma33/data_y_reg[15]/D
+    0:00:31   33679.3      0.01       0.1       0.0                          
+    0:00:31   33680.7      0.01       0.1       0.0                          
+    0:00:31   33682.5      0.01       0.1       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:31   33682.5      0.01       0.1       0.0                          
+    0:00:31   33682.5      0.01       0.1       0.0                          
+    0:00:32   33634.4      0.01       0.1       0.0                          
+    0:00:32   33623.7      0.01       0.1       0.0                          
+    0:00:32   33620.5      0.01       0.1       0.0                          
+    0:00:32   33617.9      0.01       0.1       0.0                          
+    0:00:32   33616.8      0.01       0.1       0.0                          
+    0:00:32   33616.8      0.01       0.1       0.0                          
+    0:00:32   33616.8      0.01       0.1       0.0                          
+    0:00:32   33592.6      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33591.3      0.01       0.1       0.0                          
+    0:00:33   33577.4      0.01       0.1       0.0                          
+    0:00:33   33516.3      0.01       0.1       0.0                          
+    0:00:34   33426.9      0.01       0.1       0.0                          
+    0:00:34   33411.5      0.01       0.1       0.0                          
+    0:00:34   33380.6      0.01       0.1       0.0                          
+    0:00:34   33351.1      0.01       0.1       0.0                          
+    0:00:34   33348.4      0.01       0.1       0.0                          
+    0:00:34   33347.6      0.01       0.1       0.0                          
+    0:00:35   33345.2      0.01       0.1       0.0                          
+    0:00:35   33342.0      0.01       0.1       0.0                          
+    0:00:35   33342.0      0.01       0.1       0.0                          
+    0:00:35   33342.0      0.01       0.1       0.0                          
+    0:00:35   33342.0      0.01       0.1       0.0                          
+    0:00:35   33342.0      0.01       0.1       0.0                          
+    0:00:35   33342.0      0.01       0.1       0.0                          
+    0:00:35   33343.9      0.01       0.1       0.0 Net3/d/ma34/data_y_reg[15]/D
+    0:00:35   33352.9      0.00       0.1       0.0 Net2/d/ma24/product_reg[15]/D
+    0:00:35   33356.4      0.00       0.0       0.0 Net3/d/ma33/data_y_reg[15]/D
+    0:00:35   33359.3      0.00       0.0       0.0 Net2/d/ma21/data_y_reg[15]/D
+    0:00:35   33363.8      0.00       0.0       0.0 Net3/d/ma34/product_reg[15]/D
+    0:00:35   33363.8      0.00       0.0       0.0                          
+    0:00:36   33364.4      0.00       0.0       0.0                          
+    0:00:36   33367.3      0.00       0.0       0.0                          
+    0:00:36   33369.2      0.00       0.0       0.0                          
+    0:00:36   33369.2      0.00       0.0       0.0                          
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'network_4_8_12_16_10_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'Net3/d/y2/clk': 3408 load(s), 1 driver(s)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : network_4_8_12_16_10_16
+Version: J-2014.09-SP5-2
+Date   : Fri Dec  8 18:47:29 2017
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'network_4_8_12_16_10_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           38
+Number of nets:                            74
+Number of cells:                            3
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       3
+
+Combinational area:              17717.994013
+Buf/Inv area:                     1523.914003
+Noncombinational area:           15651.173470
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 33369.167483
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : network_4_8_12_16_10_16
+Version: J-2014.09-SP5-2
+Date   : Fri Dec  8 18:47:31 2017
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+network_4_8_12_16_10_16
+                       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =  21.4770 mW   (97%)
+  Net Switching Power  = 555.5043 uW    (3%)
+                         ---------
+Total Dynamic Power    =  22.0325 mW  (100%)
+
+Cell Leakage Power     = 672.2770 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       2.1117e+04           91.2352        2.6400e+05        2.1472e+04  (  94.57%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    360.5775          464.2693        4.0828e+05        1.2331e+03  (   5.43%)
+--------------------------------------------------------------------------------------------------
+Total          2.1477e+04 uW       555.5044 uW     6.7228e+05 nW     2.2705e+04 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : network_4_8_12_16_10_16
+Version: J-2014.09-SP5-2
+Date   : Fri Dec  8 18:47:31 2017
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: Net3/d/ma31/product_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Net3/d/ma31/data_y_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  network_4_8_12_16_10_16
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Net3/d/ma31/product_reg[1]/CK (DFF_X1)                  0.00 #     0.00 r
+  Net3/d/ma31/product_reg[1]/Q (DFF_X1)                   0.08       0.08 f
+  Net3/d/ma31/add_1299/A[1] (mac_4_DW01_add_1)            0.00       0.08 f
+  Net3/d/ma31/add_1299/U82/ZN (AND2_X1)                   0.04       0.12 f
+  Net3/d/ma31/add_1299/U113/ZN (AOI21_X1)                 0.06       0.18 r
+  Net3/d/ma31/add_1299/U121/ZN (OAI21_X1)                 0.03       0.21 f
+  Net3/d/ma31/add_1299/U108/ZN (AOI21_X1)                 0.04       0.25 r
+  Net3/d/ma31/add_1299/U158/ZN (OAI21_X1)                 0.03       0.29 f
+  Net3/d/ma31/add_1299/U112/ZN (AOI21_X1)                 0.04       0.33 r
+  Net3/d/ma31/add_1299/U170/ZN (OAI21_X1)                 0.03       0.36 f
+  Net3/d/ma31/add_1299/U110/ZN (AOI21_X1)                 0.04       0.40 r
+  Net3/d/ma31/add_1299/U169/ZN (OAI21_X1)                 0.03       0.44 f
+  Net3/d/ma31/add_1299/U168/ZN (AOI21_X1)                 0.04       0.48 r
+  Net3/d/ma31/add_1299/U166/ZN (INV_X1)                   0.03       0.51 f
+  Net3/d/ma31/add_1299/U89/ZN (NAND2_X1)                  0.03       0.54 r
+  Net3/d/ma31/add_1299/U91/ZN (NAND3_X1)                  0.04       0.58 f
+  Net3/d/ma31/add_1299/U6/CO (FA_X1)                      0.10       0.68 f
+  Net3/d/ma31/add_1299/U95/ZN (NAND2_X1)                  0.03       0.71 r
+  Net3/d/ma31/add_1299/U97/ZN (NAND3_X1)                  0.04       0.75 f
+  Net3/d/ma31/add_1299/U101/ZN (NAND2_X1)                 0.03       0.79 r
+  Net3/d/ma31/add_1299/U103/ZN (NAND3_X1)                 0.04       0.82 f
+  Net3/d/ma31/add_1299/U3/CO (FA_X1)                      0.09       0.91 f
+  Net3/d/ma31/add_1299/U152/ZN (XNOR2_X1)                 0.05       0.97 f
+  Net3/d/ma31/add_1299/SUM[15] (mac_4_DW01_add_1)         0.00       0.97 f
+  Net3/d/ma31/data_y_reg[15]/U3/Z (MUX2_X1)               0.07       1.03 f
+  Net3/d/ma31/data_y_reg[15]/D (DFF_X1)                   0.01       1.04 f
+  data arrival time                                                  1.04
+
+  clock clk (rise edge)                                   1.08       1.08
+  clock network delay (ideal)                             0.00       1.08
+  Net3/d/ma31/data_y_reg[15]/CK (DFF_X1)                  0.00       1.08 r
+  library setup time                                     -0.04       1.04
+  data required time                                                 1.04
+  --------------------------------------------------------------------------
+  data required time                                                 1.04
+  data arrival time                                                 -1.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/gsrinivasan/aswinese507/Result-Analysis/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 16 nets to module mac_0 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_9 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 9 nets to module datapath_module1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_8 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_7 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_6 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_5 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 7 nets to module datapath_module2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 1 nets to module control_module3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_4 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mac_1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 2 nets to module datapath_module3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+quit
+
+Thank you...

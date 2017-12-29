@@ -1,0 +1,39 @@
+
+//-------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------------------------------------//
+// Project Title    : Hardware Generation Tool                                                   ESE 507 [Fall 2017] //
+//                                                                                                                   //
+// Project Member 1 : Aswin Natesh Venkatesh    [SBU ID: 111582677]                                                  //
+// Project Member 2 : Gosakan Srinivasan        [SBU ID: 111579886]                                                  // 
+//                                                                                                                   //
+// Submission Date  : December 08, 2017                                                                              //
+//-------------------------------------------------------------------------------------------------------------------//
+
+README FILE - Commands
+
+Part 1 - Basic Matrix Vector Multiplication Hardware & Validation
+
+	Step 1 - 		$ make 													- Compile All Codes 
+
+	Step 2 - 		$ ./testmodeone M N P T 								- To create MVM SV Code & Validate
+
+	Step 3 - 		$ ./testmodetwo M N P T 								- To create MVM SV Code & Validate
+
+	To Test Individually
+
+	Step 1 - 		$ make 													- Compile All Codes 
+
+	Step 2 - 		$ ./testgen 1 M N P T 									- Run to Generate Testbench and Inputs
+
+	Step 3 - 		$ ./gen 1 M N P T const_M_N_P_T.txt						- Run to Generate MVM Code
+
+	Step 4 - 		$ vlog layer_M_N_P_T.sv tb_layer_M_N_P_T.sv 			- To Run MVM SV Code
+
+	Step 5 - 		$ vsim tb_layer_M_N_P_T									- To Simulate and Test MVM SV Code
+
+
+To Simulate:
+	
+	dc_shell -f runsynth.tcl | tee <OutputFile.txt>
+
+	Note: runsynth.tcl & setupdc.tcl files are to be included to the directory

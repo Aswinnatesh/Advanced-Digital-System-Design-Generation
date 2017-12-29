@@ -1,0 +1,30 @@
+
+//-------------------------------------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------------------------------------//
+// Project Title    : Matrix Vector Multiplication  || Part: 01                                  ESE 507 [Fall 2017] //
+//                                                                                                                   //
+// Project Member 1 : Aswin Natesh Venkatesh    [SBU ID: 111582677]                                                  //
+// Project Member 2 : Gosakan Srinivasan        [SBU ID: 111579886]                                                  // 
+//                                                                                                                   //
+// Submission Date  : November 6, 2017                                                                               //
+//-------------------------------------------------------------------------------------------------------------------//
+
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-LEGEND_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+//  TOP MODULE
+//      s_valid   =   Input   = Valid Input Signal
+//      m_ready   =   Input   = Acknowledgement from Master  
+//      data_in   =   Input   = Data Stream Input
+//      m_valid   =   Output  = Final Sum Output Ready Signal
+//      s_ready   =   Output  = Acknowledgment From Matrix Multiplier System
+//      data_out  =   Output  = Data Stream Output
+//      overflow  =   Output  = Overflow Bit 
+//  MEMORY MODULE
+//      data_in   =   Input    
+//      data_out  =   Output   
+//      addr      =   Input    
+//      wr_en   =   Input    
+//  MAC MODULE
+//      clear     =   Input
+//      ain     = Input
+//      bin     = Input
+//      fout    = Output
